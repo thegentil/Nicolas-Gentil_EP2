@@ -15,13 +15,28 @@ window = turtle.Screen()               # criando uma janela
 window.bgcolor("lightblue")               # Definindo a cor de fundo para azul
 window.title("Jogo da Forca")               # Criando um título para o jogo
 
+from random import choice
+
 # Selecionando o arquivo com a lista
 
-L = open('Lista de palavras - Jogo da forca.txt', encoding="utf-8")
+arquivo = open('Lista de palavras - Jogo da forca.txt', encoding="utf-8")
 
-l = L.readlines()
+# Criando um random para a lista
 
-print(l)
+esc = choice(arquivo)
+
+# Definindo a posição da forca
+
+turtle.penup()
+turtle.setx(-200)
+turtle.sety(-100)
+turtle.pendown()
+turtle.left(90)
+turtle.fd(300)
+turtle.right(90)
+turtle.fd(100)
+turtle.right(90)
+turtle.fd(100)
 
 # Criando a função while para repetir o programa
 
@@ -29,16 +44,7 @@ x = 0
 
 while x == 0:
     
-    turtle.penup()
-    turtle.setx(-200)
-    turtle.sety(-100)
-    turtle.pendown()
-    turtle.left(90)
-    turtle.fd(300)
-    turtle.right(90)
-    turtle.fd(100)
-    turtle.right(90)
-    turtle.fd(100)
+
     
     p = window.textinput("Pergunta", "Insira uma letra:")
     
