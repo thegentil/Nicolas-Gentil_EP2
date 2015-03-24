@@ -50,17 +50,87 @@ turtle.fd(100)
 turtle.right(90)
 turtle.fd(100)
 
+# Criando a cabeça
+
+turtle.penup()
+turtle.right(90)
+turtle.pendown()
+turtle.circle(30)
+
+# Criando o corpo
+
+turtle.penup()
+turtle.left(90)
+turtle.fd(60)
+turtle.pendown()
+turtle.fd(70)
+
+# Criando a primeira perna
+
+turtle.right(30)
+turtle.fd(50)
+turtle.penup()
+turtle.setx(-100)
+turtle.sety(-30) 
+
+# Criando a segunda perna
+
+turtle.pendown()
+turtle.left(60)
+turtle.fd(50)
+
+# Criando o primeiro braço
+
+turtle.penup()
+turtle.setx(-100)
+turtle.sety(5)
+turtle.left(60)
+turtle.pendown()
+turtle.fd(50)
+
+# Criando o segundo braço
+
+turtle.penup()
+turtle.right(180)
+turtle.pendown()
+turtle.fd(100)
+
+
+# Criando os olhos
+
+turtle.penup()
+turtle.setx(-100)
+turtle.sety(100)
+turtle.left(90)
+turtle.fd(20)
+turtle.right(90)
+turtle.fd(10)
+turtle.pendown()
+turtle.circle(2)
+turtle.penup()
+turtle.left(180)
+turtle.fd(20)
+turtle.right(180)
+turtle.pendown()
+turtle.circle(2)
+
+
+
+
+
 # Criando a função while para repetir o programa
 
 x = 0
 
 while x == 0:
     
+    #if 
+    
 
     
     p = window.textinput("Pergunta", "Insira uma letra:")
     
-    if p in conteudo(0):
+    if p in limpa(0):
         
         turtle
     
