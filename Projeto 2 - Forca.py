@@ -21,13 +21,15 @@ from random import choice
 
 arquivo = open('entrada.txt', encoding="utf-8")
 
-conteudo = arquivo.readlines
+conteudo = arquivo.readlines()
 
-print(conteudo)
+c = conteudo.strip()
+
+print(c)
 
 # Criando um random para a lista
 
-esc = choice(arquivo)
+esc = choice(conteudo)
 
 # Definindo a posição da forca
 
