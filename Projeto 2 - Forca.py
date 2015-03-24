@@ -39,6 +39,8 @@ esc = choice(limpa)
 
 # Definindo a posição da forca
 
+turtle.hideturtle()
+
 turtle.penup()
 turtle.setx(-200)
 turtle.sety(-100)
@@ -113,6 +115,20 @@ turtle.fd(20)
 turtle.right(180)
 turtle.pendown()
 turtle.circle(2)
+
+# Criando a boca
+
+turtle.penup()
+turtle.setx(-100)
+turtle.sety(100)
+turtle.left(90)
+turtle.fd(40)
+turtle.pendown()
+turtle.left(90)
+turtle.fd(10)
+turtle.right(180)
+turtle.fd(20)
+
 
 
 
