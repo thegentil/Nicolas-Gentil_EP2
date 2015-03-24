@@ -21,11 +21,18 @@ from random import choice
 
 arquivo = open('entrada.txt', encoding="utf-8")
 
-conteudo = arquivo.readlines()
+conteudo = arquivo.readlines()               # cria uma lista do arquivo
 
-c = conteudo.strip()
+# Limpando a lista de palavras
 
-print(c)
+for palavra in conteudo:               # Faz com que o comando do strip repita em cada palavra
+    num = conteudo.index(palavra)               # Define um nome para cada posição
+    conteudo[num] = palavra.strip()               # Aplica o comando
+
+
+
+
+print(conteudo)
 
 # Criando um random para a lista
 
