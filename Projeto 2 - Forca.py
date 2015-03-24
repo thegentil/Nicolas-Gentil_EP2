@@ -19,7 +19,11 @@ from random import choice
 
 # Selecionando o arquivo com a lista
 
-arquivo = open('Lista de palavras - Jogo da forca.txt', encoding="utf-8")
+arquivo = open('entrada.txt', encoding="utf-8")
+
+conteudo = arquivo.readlines
+
+print(conteudo)
 
 # Criando um random para a lista
 
