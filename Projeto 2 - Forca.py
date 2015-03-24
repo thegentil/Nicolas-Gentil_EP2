@@ -25,18 +25,17 @@ conteudo = arquivo.readlines()               # cria uma lista do arquivo
 
 # Limpando a lista de palavras
 
-for palavra in conteudo:               # Faz com que o comando do strip repita em cada palavra
-    num = conteudo.index(palavra)               # Define um nome para cada posição
-    conteudo[num] = palavra.strip()               # Aplica o comando
+limpa = []
 
+for palavra in conteudo:              # Faz com que o comando do strip repita em cada palavra
+    p = palavra.strip()               
+    if p != "":               # Elimina a linha em branco
+        limpa.append(p)               # Adiciona as palavras limpas para a nova lista
 
-
-
-print(conteudo)
 
 # Criando um random para a lista
 
-esc = choice(conteudo)
+esc = choice(limpa)
 
 # Definindo a posição da forca
 
@@ -60,6 +59,10 @@ while x == 0:
 
     
     p = window.textinput("Pergunta", "Insira uma letra:")
+    
+    if p in conteudo(0):
+        
+        turtle
     
     
     
