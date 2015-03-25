@@ -41,97 +41,132 @@ print(len(esc))
   
          
 # Definindo a posição da forca
+         
+def forca():         
 
-turtle.hideturtle()
-
-turtle.penup()
-turtle.setx(-200)
-turtle.sety(-100)
-turtle.pendown()
-turtle.left(90)
-turtle.fd(300)
-turtle.right(90)
-turtle.fd(100)
-turtle.right(90)
-turtle.fd(100)
+    turtle.hideturtle()
+    
+    turtle.penup()
+    turtle.setx(-200)
+    turtle.sety(-100)
+    turtle.pendown()
+    turtle.left(90)
+    turtle.fd(300)
+    turtle.right(90)
+    turtle.fd(100)
+    turtle.right(90)
+    turtle.fd(100)
+    
+forca()    
 
 # Criando a cabeça
 
-turtle.penup()
-turtle.right(90)
-turtle.pendown()
-turtle.circle(30)
-turtle.fillcolor("yellow")    # Algum erro, perguntar
+def cabeca():
+
+    turtle.penup()
+    turtle.right(90)
+    turtle.pendown()
+    turtle.circle(30)
+    turtle.fillcolor("yellow")    # Algum erro, perguntar
+
+cabeca()
 
 # Criando o corpo
 
-turtle.penup()
-turtle.left(90)
-turtle.fd(60)
-turtle.pendown()
-turtle.fd(70)
+def corpo():
+
+    turtle.penup()
+    turtle.left(90)
+    turtle.fd(60)
+    turtle.pendown()
+    turtle.fd(70)
+    
+corpo()    
 
 # Criando a primeira perna
 
-turtle.right(30)
-turtle.fd(50)
-turtle.penup()
-turtle.setx(-100)
-turtle.sety(-30) 
+def perna1():
+
+    turtle.right(30)
+    turtle.fd(50)
+    turtle.penup()
+    turtle.setx(-100)
+    turtle.sety(-30) 
+
+perna1()
 
 # Criando a segunda perna
 
-turtle.pendown()
-turtle.left(60)
-turtle.fd(50)
+def perna2():
+
+    turtle.pendown()
+    turtle.left(60)
+    turtle.fd(50)
+
+perna2()    
 
 # Criando o primeiro braço
 
-turtle.penup()
-turtle.setx(-100)
-turtle.sety(5)
-turtle.left(60)
-turtle.pendown()
-turtle.fd(30)
+def braco1():
+
+    turtle.penup()
+    turtle.setx(-100)
+    turtle.sety(5)
+    turtle.left(60)
+    turtle.pendown()
+    turtle.fd(30)
+    
+braco1()    
 
 # Criando o segundo braço
 
-turtle.penup()
-turtle.right(180)
-turtle.pendown()
-turtle.fd(60)
-
+def braco2():
+    
+    turtle.penup()
+    turtle.right(180)
+    turtle.pendown()
+    turtle.fd(60)
+    
+braco2()    
 
 # Criando os olhos
 
-turtle.penup()
-turtle.setx(-100)
-turtle.sety(100)
-turtle.left(90)
-turtle.fd(20)
-turtle.right(90)
-turtle.fd(10)
-turtle.pendown()
-turtle.circle(2)
-turtle.penup()
-turtle.left(180)
-turtle.fd(20)
-turtle.right(180)
-turtle.pendown()
-turtle.circle(2)
+def olhos():
+    
+    turtle.penup()
+    turtle.setx(-100)
+    turtle.sety(100)
+    turtle.left(90)
+    turtle.fd(20)
+    turtle.right(90)
+    turtle.fd(10)
+    turtle.pendown()
+    turtle.circle(2)
+    turtle.penup()
+    turtle.left(180)
+    turtle.fd(20)
+    turtle.right(180)
+    turtle.pendown()
+    turtle.circle(2)
+    
+olhos()    
 
 # Criando a boca
 
-turtle.penup()
-turtle.setx(-100)
-turtle.sety(100)
-turtle.left(90)
-turtle.fd(40)
-turtle.pendown()
-turtle.left(90)
-turtle.fd(10)
-turtle.right(180)
-turtle.fd(20)
+def boca():
+    
+    turtle.penup()
+    turtle.setx(-100)
+    turtle.sety(100)
+    turtle.left(90)
+    turtle.fd(40)
+    turtle.pendown()
+    turtle.left(90)
+    turtle.fd(10)
+    turtle.right(180)
+    turtle.fd(20)
+    
+boca()    
 
 # Definindo os espaços que estarão as letras
 
