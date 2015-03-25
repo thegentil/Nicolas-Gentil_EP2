@@ -15,7 +15,7 @@ window = turtle.Screen()               # criando uma janela
 window.bgcolor("lightblue")               # Definindo a cor de fundo para azul
 window.title("Jogo da Forca")               # Criando um título para o jogo
 
-from random import choice
+from random import choice               # Importando a função random
 
 # Selecionando o arquivo com a lista
 
@@ -384,9 +384,8 @@ if len(esc) == 21:
     turtle.fd(10)
     turtle.pendown()
     
-    turtle.fd(20)
     turtle.penup()
-    turtle.fd(10)
+    turtle.fd(30)
     turtle.pendown()
     
     turtle.fd(20)
@@ -429,9 +428,8 @@ if len(esc) == 21:
     turtle.fd(10)
     turtle.pendown()
     
-    turtle.fd(20)
     turtle.penup()
-    turtle.fd(10)
+    turtle.fd(30)
     turtle.pendown()
     
     turtle.fd(20)
@@ -444,9 +442,8 @@ if len(esc) == 21:
     turtle.fd(10)
     turtle.pendown()
     
-    turtle.fd(20)
     turtle.penup()
-    turtle.fd(10)
+    turtle.fd(30)
     turtle.pendown()
     
     turtle.fd(20)
