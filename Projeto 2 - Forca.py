@@ -23,6 +23,7 @@ arquivo = open('entrada.txt', encoding="utf-8")
 
 conteudo = arquivo.readlines()               # cria uma lista do arquivo
 
+
 # Limpando a lista de palavras
 
 limpa = []
@@ -38,6 +39,10 @@ for palavra in conteudo:              # Faz com que o comando do strip repita em
 esc = choice(limpa)
 
 print(len(esc))
+
+print(limpa)
+
+print(esc)
   
          
 # Definindo a posição da forca
@@ -45,6 +50,7 @@ print(len(esc))
 def forca():         
 
     turtle.hideturtle()
+    turtle.pensize(8)
     
     turtle.penup()
     turtle.setx(-200)
@@ -66,8 +72,9 @@ def cabeca():
     turtle.penup()
     turtle.right(90)
     turtle.pendown()
+    turtle.fillcolor("yellow")
     turtle.circle(30)
-    turtle.fillcolor("yellow")    # Algum erro, perguntar
+     
 
 cabeca()
 
@@ -168,345 +175,30 @@ def boca():
     
 boca()    
 
+# Criando a função espaço
+
+def espaco():
+    
+    turtle.penup()
+    turtle.fd(30)
+    turtle.pendown()
+    
 # Definindo os espaços que estarão as letras
-
-if len(esc) == 7:
     
-    turtle.penup()
-    turtle.setx(-200)
-    turtle.sety(-200)
-    turtle.pendown()
-    turtle.right(180)
+turtle.penup()
+turtle.setx(-200)
+turtle.sety(-200)
+turtle.pendown()
+turtle.right(180)    
     
+for c in esc:
     turtle.fd(20)
     turtle.penup()
     turtle.fd(10)
     turtle.pendown()
     
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    
-if len(esc) == 9:
-    
-    turtle.penup()
-    turtle.setx(-200)
-    turtle.sety(-200)
-    turtle.pendown()
-    turtle.right(180)
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-
-if len(esc) == 10:
-    
-    turtle.penup()
-    turtle.setx(-200)
-    turtle.sety(-200)
-    turtle.pendown()
-    turtle.right(180)
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-
-if len(esc) == 12:
-    
-    turtle.penup()
-    turtle.setx(-200)
-    turtle.sety(-200)
-    turtle.pendown()
-    turtle.right(180)
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-     
-
-if len(esc) == 21:
-    
-    turtle.penup()
-    turtle.setx(-200)
-    turtle.sety(-200)
-    turtle.pendown()
-    turtle.right(180)
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.penup()
-    turtle.fd(30)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.penup()
-    turtle.fd(30)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.penup()
-    turtle.fd(30)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-    turtle.fd(20)
-    turtle.penup()
-    turtle.fd(10)
-    turtle.pendown()
-    
-      
+    if c == '':
+        espaco()    
 
 # Criando a função while para repetir o programa
 
