@@ -15,6 +15,7 @@ window = turtle.Screen()               # criando uma janela
 window.bgcolor("lightblue")               # Definindo a cor de fundo para azul
 window.title("Jogo da Forca")               # Criando um título para o jogo
 turtle.speed(0)
+turtle.screensize(2000,800)
 
 from random import choice               # Importando a função random
 
@@ -57,7 +58,7 @@ print(esc)
 
 # Criando a lista das palavras formatadas
 
-formatada = (formatar(esc)).lower()
+formatada = (formatar(esc)).lower()              # Palavra formatada
 
 print(formatada)
 
@@ -224,17 +225,26 @@ for c in esc:
 acertos = 0
 erros = 0
 
-while erros != 8:
-    
-    #if 
-    
-
+while erros <= 8:
     
     p = window.textinput("Pergunta", "Insira uma letra:")
-    
-    if p in esc:
         
-        turtle.write()
+    for i in range(len(esc)):
+        if p == esc[i]:
+            turtle.penup()
+            turtle.setx(-300+i*30)
+            turtle.sety(-185)
+            turtle.pendown()   
+            turtle.write(p, font= ("Arial",25))
+            
+            acertos += 1
+            
+        if p != esc[i]:
+            cabeca()
+            
+            erros += 1
+        
+        
     
     
     
