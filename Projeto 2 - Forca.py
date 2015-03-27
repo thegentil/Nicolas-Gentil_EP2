@@ -229,8 +229,8 @@ while erros <= 8:
     
     p = window.textinput("Pergunta", "Insira uma letra:")
         
-    for i in range(len(esc)):
-        if p == esc[i]:
+    for i in range(len(formatada)):
+        if p == formatada[i]:
             turtle.penup()
             turtle.setx(-300+i*30)
             turtle.sety(-185)
@@ -239,10 +239,10 @@ while erros <= 8:
             
             acertos += 1
             
-        if p != esc[i]:
-            cabeca()
-            
-            erros += 1
+#        if p != esc[i]:
+#            cabeca()
+#            
+#            erros += 1
         
         
     
