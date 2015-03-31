@@ -18,6 +18,8 @@ arquivo = open('entrada.txt', encoding="utf-8")               # Selecionando o a
 
 conteudo = arquivo.readlines()               # cria uma lista do arquivo
 
+palavras = []              # Cria uma lista das palavras já usadas
+
 
 # Limpando a lista de palavras
 
@@ -39,7 +41,6 @@ while restart == 0:
     window = turtle.Screen()               # criando uma janela
     window.title("Jogo da Forca")               # Criando um título para o jogo
     turtle.speed(0)               # Definindo a velocidade da tartaruga
-    turtle.screensize(2000,800)               # Definindo o tamanho da tela
     
     turtle2 = turtle.Turtle()               # criando uma nova tartaruga
     turtle2.speed(0)               # Definindo a velocidade da tartaruga
@@ -47,7 +48,7 @@ while restart == 0:
     turtle2.hideturtle()               # Escondendo a tartaruga
     
     turtle3 = turtle.Turtle()               # criando uma nova tartaruga
-    turtle3.pensize(8)               # Definindo a grossura da caneta
+    turtle3.pensize(4)               # Definindo a grossura da caneta
     turtle3.speed(0)               # Definindo a velocidade da tartaruga
     turtle3.hideturtle()               # Escondendo a tartaruga
     
@@ -56,6 +57,20 @@ while restart == 0:
     turtle4.speed(0)               # Definindo a velocidade da tartaruga
     turtle4.hideturtle()               # Escondendo a tartaruga
     
+    turtle5 = turtle.Turtle()               # criando uma nova tartaruga
+    turtle5.pensize(8)               # Definindo a grossura da caneta
+    turtle5.speed(0)               # Definindo a velocidade da tartaruga
+    turtle5.hideturtle()               # Escondendo a tartaruga
+    
+    turtle6 = turtle.Turtle()               # criando uma nova tartaruga
+    turtle6.pensize(8)               # Definindo a grossura da caneta
+    turtle6.speed(0)               # Definindo a velocidade da tartaruga
+    turtle6.hideturtle()               # Escondendo a tartaruga
+    
+    turtle7 = turtle.Turtle()               # criando uma nova tartaruga
+    turtle7.pensize(8)               # Definindo a grossura da caneta
+    turtle7.speed(0)               # Definindo a velocidade da tartaruga
+    turtle7.hideturtle()               # Escondendo a tartaruga
     
     # Comandos da função normalize, que irá retirar os acentos e maiusculas das palavras 
     
@@ -69,8 +84,11 @@ while restart == 0:
     # Criando um random para a lista
     
     esc = choice(limpa)              # Palavra que será randomizada
+
     
     limpa.remove(esc)               # Remove a palavra já escolhida
+    
+    palavras.append(esc)              # Adiciona a palavra escolhida na lista de palavras escolhidas
     
     print(len(esc))
     
@@ -80,7 +98,7 @@ while restart == 0:
     
     # Criando a lista das palavras formatadas
     
-    formatada = (formatar(esc)).lower()              # Palavra formatada
+    formatada = (formatar(esc)).lower()              # Palavra formatada minuscula
     
     print(formatada)
      
@@ -114,8 +132,10 @@ while restart == 0:
         turtle2.setpos(-100, 100)
         turtle2.right(180)
         turtle2.pendown()
+        turtle2.begin_fill()
         turtle2.fillcolor("yellow")
         turtle2.circle(30)
+        turtle2.end_fill()
     
     # Criando o corpo
     
@@ -205,7 +225,7 @@ while restart == 0:
     def espaco():
         
         turtle3.penup()
-        turtle3.fd(30)
+        turtle3.fd(15)
         turtle3.pendown()
         
     # Definindo os traços
@@ -213,7 +233,7 @@ while restart == 0:
     def tracos():    
         
         turtle3.penup()
-        turtle3.setx(-300)
+        turtle3.setx(-200)
         turtle3.sety(-200)
         turtle3.pendown()
             
@@ -223,9 +243,9 @@ while restart == 0:
                 espaco()
                 
             else:    
-                turtle3.fd(20)
-                turtle3.penup()
                 turtle3.fd(10)
+                turtle3.penup()
+                turtle3.fd(5)
                 turtle3.pendown()
             
     
@@ -238,7 +258,7 @@ while restart == 0:
         
         turtle4.color('Red')        
         turtle4.penup()
-        turtle4.setpos(100, 100)
+        turtle4.setpos(0, 125)
         turtle4.pendown()
         turtle4.write('ERROU!', font = ('Arial', 30))
         
@@ -248,9 +268,40 @@ while restart == 0:
         
         turtle4.color('Green')
         turtle4.penup()
-        turtle4.setpos(100, 100)
+        turtle4.setpos(0, 125)
         turtle4.pendown()
         turtle4.write('ACERTOU!', font = ('Arial', 30))
+        
+#    def placar():
+#        turtle5.penup()
+#        turtle5.setpos(50, 60)
+#        turtle5.pendown()
+#        turtle5.write('Placar:', font = ('Arial', 30))
+#        turtle5.penup()
+#        turtle5.setpos(50, 30)
+#        turtle5.pendown()
+#        turtle5.write('Acertos:', font = ('Arial', 20))
+#        turtle5.penup()
+#        turtle5.setpos(50, 0)
+#        turtle5.pendown()
+#        turtle5.write('Erros:', font = ('Arial', 20))
+#        turtle5.penup()
+#        turtle5.setpos(50, -30)
+#        turtle5.pendown()
+#        turtle5.write('Média de acertos:', font = ('Arial', 20))
+#        
+#    placar()    
+    
+
+    
+    chutes = 0              # Definindo os chutes    
+        
+        
+    def média_de_tentativas(chutes, palavras):
+        return chutes/len(palavras)
+        
+    média_de_tentativas(chutes, palavras)    
+                
         
     
     # Criando a função while para repetir o programa
@@ -266,26 +317,44 @@ while restart == 0:
     while erros < 8 and restart==0:
         
         p = window.textinput("Pergunta", "Insira uma letra:")
+        p = p.lower()
+        
+        ja_usadas = []
+        
+        for j in p:
+            ja_usadas.append(p)
+            
+#        if p in ja_usadas:
+#            usada = window.textinput('Já usada', 'Letra já foi utilizada, insira outra letra:)
             
         for i in range(0,len(formatada)):
                 
             if p == formatada[i]:
                 
                 turtle3.penup()
-                turtle3.setx(-300+i*30)
+                turtle3.setx(-200+i*15)
                 turtle3.sety(-185)
                 turtle3.pendown()   
-                turtle3.write(esc[i], font = ("Arial",25))
+                turtle3.write((esc[i]).upper(), font = ("Arial",15))
+                
+#                turtle6.clear()
+#                turtle6.penup()
+#                turtle6.setpos(80, 30)
+#                turtle6.pendown()
+#                turtle6.write((1 * acertos) - e, font = ('Arial', 20))
                 
                 acertos += 1
+                chutes += 1
                 
                 turtle4.clear()
+                
                 acertou()
-                print(acertos)
                 
         if p not in formatada:
                 erros += 1
-                print(erros)
+                chutes += 1
+                
+                print(chutes)
             
         if erros == 1 and p not in formatada:
            cabeca()
@@ -338,6 +407,7 @@ while restart == 0:
         turtle2.clear()
         turtle3.clear()
         turtle4.clear()
+        turtle5.clear()
         restart = 0
         
     else:
