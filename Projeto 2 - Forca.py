@@ -47,6 +47,7 @@ while restart == 0:
     
     
     window = turtle.Screen()               # criando uma janela
+    window.bgcolor("Yellow")
     window.title("Jogo da Forca")               # Criando um título para o jogo
     turtle.speed(0)               # Definindo a velocidade da tartaruga
     
@@ -75,6 +76,11 @@ while restart == 0:
     turtle6.speed(0)               # Definindo a velocidade da tartaruga
     turtle6.hideturtle()               # Escondendo a tartaruga
     
+    turtle7 = turtle.Turtle()               # criando uma nova tartaruga
+    turtle7.pensize(8)               # Definindo a grossura da caneta
+    turtle7.speed(0)               # Definindo a velocidade da tartaruga
+    turtle7.hideturtle()               # Escondendo a tartaruga
+    
     
     
     # Comandos da função normalize, que irá retirar os acentos e maiusculas das palavras 
@@ -95,17 +101,10 @@ while restart == 0:
     
     palavras.append(esc)              # Adiciona a palavra escolhida na lista de palavras escolhidas
     
-    print(len(esc))
-    
-    print(limpa)
-    
-    print(esc)
     
     # Criando a lista das palavras formatadas
     
     formatada = (formatar(esc)).lower()              # Palavra formatada minuscula
-    
-    print(formatada)
      
              
     # Criando a forca
@@ -138,7 +137,7 @@ while restart == 0:
         turtle2.right(180)
         turtle2.pendown()
         turtle2.begin_fill()
-        turtle2.fillcolor("yellow")
+        turtle2.fillcolor("Blue")
         turtle2.circle(30)
         turtle2.end_fill()
     
@@ -277,6 +276,7 @@ while restart == 0:
         turtle4.pendown()
         turtle4.write('ACERTOU!', font = ('Arial', 30))
         
+    # Definindo o letreiro da média  
         
     def placar():
         turtle6.penup()
@@ -287,15 +287,33 @@ while restart == 0:
     placar()     
         
         
+    # Definindo a turtle que escreve a média 
         
     def escreve_media():
         turtle5.penup()
-        turtle5.setpos(50, 20)
+        turtle5.setpos(70, 20)
         turtle5.pendown()
         turtle5.write(int(média_de_tentativas(chutes, palavras)), font = ('Arial', 20))
         
-    escreve_media()    
+    escreve_media() 
+    
+    # Definindo o letreiro vc ganhou
+    
+    def vc_ganhou():
+        turtle7.color('Green')
+        turtle7.penup()
+        turtle7.setpos(-50, 125)
+        turtle7.pendown()
+        turtle7.write('VOCÊ GANHOU!', font = ('Arial', 30))
         
+    # Definindo o letreiro vc perdeu
+        
+    def vc_perdeu():
+        turtle7.color('Red')
+        turtle7.penup()
+        turtle7.setpos(-50, 125)
+        turtle7.pendown()
+        turtle7.write('VOCÊ PERDEU!', font = ('Arial', 30))    
         
         
     ja_usadas = []              # Cria uma lista das letras já inseridas
@@ -313,16 +331,16 @@ while restart == 0:
     
     while erros < 8 and restart==0:
         
-        p = window.textinput("Pergunta", "Insira uma letra:")
+        p = window.textinput("Pergunta", "Insira uma letra:")              # Input da letra escolhida
         p = p.lower()
 
         while p in ja_usadas or len(p)>1:
             p = window.textinput('Já usada ou mais de uma letra', 'Letra já foi utilizada ou você digitou mais de uma letra, insira outra letra:')
             p = p.lower()
             
-        ja_usadas.append(p)    
+        ja_usadas.append(p)              # Adiciona a letra escolhida na lista das já usadas    
             
-        for i in range(0,len(formatada)):
+        for i in range(0,len(formatada)):              # Escreve as letras
                 
             if p == formatada[i]:
                 
@@ -342,52 +360,52 @@ while restart == 0:
         if p not in formatada:
                 erros += 1
                 chutes += 1
-                
-                print(chutes)
             
-        if erros == 1 and p not in formatada:
+        if erros == 1 and p not in formatada:              # Desenha a cabeça
            cabeca()
            turtle4.clear()
            errou()
            
-        if erros == 2 and p not in formatada:
+        if erros == 2 and p not in formatada:              # Desenha o corpo
             corpo()
             turtle4.clear()
             errou()
             
-        if erros == 3 and p not in formatada:
+        if erros == 3 and p not in formatada:              # Desenha a perna
             perna1()
             turtle4.clear()
             errou()
             
-        if erros == 4 and p not in formatada:
+        if erros == 4 and p not in formatada:              # Desenha a perna
             perna2()
             turtle4.clear()
             errou()
             
-        if erros == 5 and p not in formatada:
+        if erros == 5 and p not in formatada:              # Desenha o braço
             braco1()
             turtle4.clear()
             errou()
             
-        if erros == 6 and p not in formatada:
+        if erros == 6 and p not in formatada:              # Desenha o braço
             braco2()
             turtle4.clear()
             errou()
             
-        if erros == 7 and p not in formatada:
+        if erros == 7 and p not in formatada:              # Desenha os olhos
             olhos()
             turtle4.clear()
             errou()
             
-        if erros == 8 and p not in formatada:
+        if erros == 8 and p not in formatada:              # Desenha a boca
             boca()
             turtle4.clear()
-            errou()
+            vc_perdeu()
             restart = 1
             
             
         if acertos == len(formatada):
+            turtle4.clear()
+            vc_ganhou()
             restart = 1
             
     f = window.textinput("Fim", "Fim do jogo! Se quiser jogar de novo, digite s, senão, n")
@@ -397,6 +415,9 @@ while restart == 0:
         turtle3.clear()
         turtle4.clear()
         turtle5.clear()
+        turtle6.clear()
+        turtle7.clear()
+        
         restart = 0
         
     else:
