@@ -18,7 +18,15 @@ arquivo = open('entrada.txt', encoding="utf-8")               # Selecionando o a
 
 conteudo = arquivo.readlines()               # cria uma lista do arquivo
 
+
 palavras = []              # Cria uma lista das palavras já usadas
+
+chutes = 0              # Definindo os chutes    
+
+
+def média_de_tentativas(chutes, palavras):
+    return chutes/len(palavras)
+        
 
 
 # Limpando a lista de palavras
@@ -67,10 +75,7 @@ while restart == 0:
     turtle6.speed(0)               # Definindo a velocidade da tartaruga
     turtle6.hideturtle()               # Escondendo a tartaruga
     
-    turtle7 = turtle.Turtle()               # criando uma nova tartaruga
-    turtle7.pensize(8)               # Definindo a grossura da caneta
-    turtle7.speed(0)               # Definindo a velocidade da tartaruga
-    turtle7.hideturtle()               # Escondendo a tartaruga
+    
     
     # Comandos da função normalize, que irá retirar os acentos e maiusculas das palavras 
     
@@ -243,7 +248,7 @@ while restart == 0:
                 espaco()
                 
             else:    
-                turtle3.fd(10)
+                turtle3.fd(15)
                 turtle3.penup()
                 turtle3.fd(5)
                 turtle3.pendown()
@@ -258,7 +263,7 @@ while restart == 0:
         
         turtle4.color('Red')        
         turtle4.penup()
-        turtle4.setpos(0, 125)
+        turtle4.setpos(50, 125)
         turtle4.pendown()
         turtle4.write('ERROU!', font = ('Arial', 30))
         
@@ -268,41 +273,33 @@ while restart == 0:
         
         turtle4.color('Green')
         turtle4.penup()
-        turtle4.setpos(0, 125)
+        turtle4.setpos(50, 125)
         turtle4.pendown()
         turtle4.write('ACERTOU!', font = ('Arial', 30))
         
-#    def placar():
-#        turtle5.penup()
-#        turtle5.setpos(50, 60)
-#        turtle5.pendown()
-#        turtle5.write('Placar:', font = ('Arial', 30))
-#        turtle5.penup()
-#        turtle5.setpos(50, 30)
-#        turtle5.pendown()
-#        turtle5.write('Acertos:', font = ('Arial', 20))
-#        turtle5.penup()
-#        turtle5.setpos(50, 0)
-#        turtle5.pendown()
-#        turtle5.write('Erros:', font = ('Arial', 20))
-#        turtle5.penup()
-#        turtle5.setpos(50, -30)
-#        turtle5.pendown()
-#        turtle5.write('Média de acertos:', font = ('Arial', 20))
-#        
-#    placar()    
-    
+        
+    def placar():
+        turtle6.penup()
+        turtle6.setpos(-50, 50)
+        turtle6.pendown()
+        turtle6.write('Média de chutes por palavra:', font = ('Arial', 20))
+        
+    placar()     
+        
+        
+        
+    def escreve_media():
+        turtle5.penup()
+        turtle5.setpos(50, 20)
+        turtle5.pendown()
+        turtle5.write(int(média_de_tentativas(chutes, palavras)), font = ('Arial', 20))
+        
+    escreve_media()    
+        
+        
+        
+    ja_usadas = []              # Cria uma lista das letras já inseridas
 
-    
-    chutes = 0              # Definindo os chutes    
-        
-        
-    def média_de_tentativas(chutes, palavras):
-        return chutes/len(palavras)
-        
-    média_de_tentativas(chutes, palavras)    
-                
-        
     
     # Criando a função while para repetir o programa
     
@@ -318,30 +315,22 @@ while restart == 0:
         
         p = window.textinput("Pergunta", "Insira uma letra:")
         p = p.lower()
-        
-        ja_usadas = []
-        
-        for j in p:
-            ja_usadas.append(p)
+
+        while p in ja_usadas or len(p)>1:
+            p = window.textinput('Já usada ou mais de uma letra', 'Letra já foi utilizada ou você digitou mais de uma letra, insira outra letra:')
+            p = p.lower()
             
-#        if p in ja_usadas:
-#            usada = window.textinput('Já usada', 'Letra já foi utilizada, insira outra letra:)
+        ja_usadas.append(p)    
             
         for i in range(0,len(formatada)):
                 
             if p == formatada[i]:
                 
                 turtle3.penup()
-                turtle3.setx(-200+i*15)
+                turtle3.setx(-200+i*20)
                 turtle3.sety(-185)
                 turtle3.pendown()   
-                turtle3.write((esc[i]).upper(), font = ("Arial",15))
-                
-#                turtle6.clear()
-#                turtle6.penup()
-#                turtle6.setpos(80, 30)
-#                turtle6.pendown()
-#                turtle6.write((1 * acertos) - e, font = ('Arial', 20))
+                turtle3.write((esc[i]).upper(), font = ("Arial",18))
                 
                 acertos += 1
                 chutes += 1
